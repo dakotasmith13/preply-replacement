@@ -1,0 +1,77 @@
+.nav {
+	position: fixed; /* Make it stick at the top */
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	z-index: 1000; /* Ensure it stays on top of other elements */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+	text-decoration: none;
+	color: white;
+	padding: 10px 15px;
+	font-size: 1rem;
+}
+
+.nav-links {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.burger-bar {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+	.nav-links {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		background-color: #333;
+		width: 70%;
+		transform: translateX(100%);
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.nav-links.open {
+		transform: translateX(0);
+	}
+
+	.burger {
+		display: flex;
+	}
+}
+
+/* Style when navigation is open on mobile */
+.nav.open .nav-links {
+	transform: translateX(0);
+}
+
+/* Active state for links when clicked */
+.nav-links li a:hover {
+	background-color: #555;
+	border-radius: 5px;
+}
