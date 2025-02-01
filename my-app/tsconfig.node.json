@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ES6", // Set target ECMAScript version
+		"module": "commonjs", // Use CommonJS module resolution
+		"moduleResolution": "node", // Use Node.js module resolution
+		"outDir": "./dist", // Output directory for compiled JavaScript
+		"rootDir": "./", // Set the root directory where your TypeScript files are
+		"esModuleInterop": true, // Allow for ES module default imports
+		"strict": true, // Enable strict type-checking options
+		"skipLibCheck": true, // Skip checking library files
+		"forceConsistentCasingInFileNames": true, // Ensure consistent file naming conventions
+		"resolveJsonModule": true, // Allow importing .json files as modules
+		"types": ["node"] // Include Node.js types
+	},
+	"include": [
+		"./dak-api/**/*.ts",
+		"vite.config.ts" // Include all TypeScript files inside the dak-api folder
+	]
+}

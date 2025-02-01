@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"target": "ES5", // Set to ES5 for broader browser support, or ES6+ if using modern browsers
+		"lib": ["dom", "esnext"], // Include browser-related libraries and latest ECMAScript features
+		"module": "ESNext", // Use ES modules (important for modern bundlers like Webpack)
+		"moduleResolution": "node", // Resolve modules as Node.js does
+		"jsx": "react-jsx", // Enables the new JSX transform for React 17+
+		"esModuleInterop": true, // Enable interoperability between ES6 modules and CommonJS
+		"strict": true, // Enable all strict type-checking options
+		"skipLibCheck": true, // Skip library type checking to speed up compilation
+		"forceConsistentCasingInFileNames": true, // Ensure file name consistency (case-sensitive)
+		"resolveJsonModule": true, // Allows importing JSON files as modules
+		"outDir": "./dist", // Output compiled JS to the dist folder
+		"rootDir": "./dak-web", // Set the root directory for your source code
+		"baseUrl": "./", // Set the base directory for non-relative module imports
+		"paths": {
+			"@components/*": ["src/components/*"], // Set up path aliases (optional)
+			"@utils/*": ["src/utils/*"] // Path alias for utility functions (optional)
+		}
+	},
+	"include": [
+		"./dak-web/src/**/*" // Include all files in the src folder
+	]
+}

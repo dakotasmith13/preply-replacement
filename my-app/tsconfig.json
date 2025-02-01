@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"target": "ES6", // JavaScript version
+		"module": "commonjs", // Module system for Node.js
+		"outDir": "./dist", // Output directory for compiled JS
+		"rootDir": "./dak-api", // Root directory of TypeScript files
+		"strict": true, // Enable strict mode
+		"moduleResolution": "node", // Use Node.js module resolution
+		"esModuleInterop": true, // Ensure compatibility with ES modules
+		"skipLibCheck": true // Skip library checks to speed up compilation
+	},
+	"include": [
+		"dak-api/**/*.ts" // Include TypeScript files in dak-api folder
+	],
+	"exclude": [
+		"node_modules" // Exclude node_modules from compilation
+	]
+}
