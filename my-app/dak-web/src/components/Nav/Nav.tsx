@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Nav.css';
 
 const Nav = () => {
@@ -10,11 +10,6 @@ const Nav = () => {
 
 	return (
 		<nav className={`nav ${isOpen ? 'open' : ''}`}>
-			<div className="burger" onClick={toggleMenu}>
-				<div className="burger-bar"></div>
-				<div className="burger-bar"></div>
-				<div className="burger-bar"></div>
-			</div>
 			<ul className={`nav-links ${isOpen ? 'open' : ''}`}>
 				<li>
 					<a href="/home">Home</a>
@@ -24,6 +19,9 @@ const Nav = () => {
 				</li>
 				<li>
 					<a href="/schedule">Schedule</a>
+				</li>
+				<li className="logout">
+					<a href="/">Log out</a>
 				</li>
 			</ul>
 		</nav>
