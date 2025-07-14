@@ -16,5 +16,8 @@ export async function login({
 		}),
 	};
 
-	return fetch('http://localhost:3030/login', options);
+	return fetch('http://localhost:3030/login', {
+		...options,
+		credentials: 'include',
+	});
 }
