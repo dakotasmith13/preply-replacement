@@ -1,10 +1,10 @@
-import React from 'react';
 import Lesson from './Lesson';
+import { Lesson as LessonType } from '../../../../sharedTypes/lesson';
 import '../Home/Home.css';
 
-const LessonList = ({ lessons }: { lessons: Lesson[] }) => {
+const LessonList = ({ lessons }: { lessons: LessonType[] }) => {
 	return (
-		<div className="data-list">
+		<div className="lesson-list">
 			{lessons.map((item) => (
 				<Lesson lesson={item} />
 			))}
