@@ -1,0 +1,18 @@
+{
+	"name": "dak-api",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"migrate": "npx knex migrate:latest",
+		"create-migration": "npx knex migrate:make -x ts"
+	},
+	"dependencies": {
+		"bcrypt": "^6.0.0",
+		"gapi-script": "^1.2.0",
+		"knex": "^3.1.0",
+		"pg": "^8.16.3"
+	},
+	"devDependencies": {
+		"@types/bcrypt": "^5.0.2"
+	}
+}
