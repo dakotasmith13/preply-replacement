@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import './Login.css';
 import { login } from '../../../api/auth';
 import { useNavigate } from 'react-router-dom';
@@ -29,41 +29,39 @@ const Login = () => {
 	};
 
 	return (
-		<body>
-			<div className="login-container">
-				<div className="login-box">
-					<h2>Login</h2>
-					<form action="#" method="post" onSubmit={handleSubmit}>
-						<div className="textbox">
-							<input
-								type="text"
-								placeholder="Username"
-								name="username"
-								onChange={(e) => setUsername(e.target.value)}
-								required
-							/>
-						</div>
-						<div className="textbox">
-							<input
-								type="password"
-								placeholder="Password"
-								name="password"
-								onChange={(e) => setPassword(e.target.value)}
-								required
-							/>
-						</div>
-						<button type="submit" className="btn">
-							Login
-						</button>
-						{error && <p>{error}</p>}
-						<div className="footer">
-							<a href="#">Forgot password?</a>
-							<a href="#">Create an account</a>
-						</div>
-					</form>
-				</div>
+		<div className="login-container">
+			<div className="login-box">
+				<h2>Login</h2>
+				<form action="#" method="post" onSubmit={handleSubmit}>
+					<div className="textbox">
+						<input
+							type="text"
+							placeholder="Username"
+							name="username"
+							onChange={(e) => setUsername(e.target.value)}
+							required
+						/>
+					</div>
+					<div className="textbox">
+						<input
+							type="password"
+							placeholder="Password"
+							name="password"
+							onChange={(e) => setPassword(e.target.value)}
+							required
+						/>
+					</div>
+					<button type="submit" className="btn">
+						Login
+					</button>
+					{error && <p>{error}</p>}
+					<div className="footer">
+						<a href="#">Forgot password?</a>
+						<a href="/create-account">Create an account</a>
+					</div>
+				</form>
 			</div>
-		</body>
+		</div>
 	);
 };
 

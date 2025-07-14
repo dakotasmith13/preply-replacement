@@ -1,5 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../Nav/Nav.css';
 
 const handleSignout = () => {
 	const navigate = useNavigate();
@@ -9,7 +9,11 @@ const handleSignout = () => {
 };
 
 const Logout = () => {
-	return <button onClick={handleSignout}>Sign out</button>;
+	return (
+		<button className="logout-button" onClick={handleSignout}>
+			Sign out
+		</button>
+	);
 };
 
 export default Logout;
