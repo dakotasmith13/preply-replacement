@@ -14,10 +14,11 @@ router.post(
 		body('email').isEmail(),
 		body('password').isLength({ min: 6 }),
 		body('role').isIn(['student', 'teacher']),
+		body('name').isString().notEmpty(),
 	],
 	async (req: Request, res: Response) => {
 		const errors = validationResult(req);
-		const { email, password, role } = req.body;
+		const { email, password, role, name } = req.body;
 
 		if (!errors.isEmpty()) {
 			res.status(400).json({ error: 'Invalid input' });
@@ -26,7 +27,7 @@ router.post(
 
 		// create user account
 		try {
-			const user = await initUser(email, password, role);
+			const user = await initUser(email, password, name, role);
 			res
 				.status(201)
 				.json({ message: 'Account created successfully', data: user });

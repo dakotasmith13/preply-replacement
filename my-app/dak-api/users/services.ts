@@ -4,10 +4,11 @@ import bcrypt from 'bcrypt';
 export async function initUser(
 	email: string,
 	password: string,
+	name: string,
 	role: 'user' | 'teacher' | 'admin' = 'user'
 ) {
-	if (!email || !password) {
-		throw new Error('Email and password are required');
+	if (!email || !password || !name) {
+		throw new Error('Email, password, and name are required');
 	}
 
 	// determine if user already exists
@@ -19,5 +20,5 @@ export async function initUser(
 	const hashedPassword = await bcrypt.hash(password, 10);
 
 	// Create the user with the specified role
-	return createUser(email, hashedPassword, role);
+	return createUser(email, hashedPassword, name, role);
 }

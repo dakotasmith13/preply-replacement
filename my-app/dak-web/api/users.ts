@@ -1,6 +1,7 @@
 export async function createUser(
 	email: string,
 	password: string,
+	name: string,
 	role: 'user' | 'teacher' | 'admin' = 'user'
 ) {
 	const options = {
@@ -11,6 +12,7 @@ export async function createUser(
 		body: JSON.stringify({
 			email,
 			password,
+			name,
 			role,
 		}),
 	};
