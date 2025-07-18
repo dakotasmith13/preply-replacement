@@ -6,7 +6,14 @@ import cors from 'cors';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+	credentials: true,
+	allowedHeaders: ['Content-Type', 'Authorization'],
+	origin: ['http://localhost:3030', 'http://localhost:5173'],
+};
+
+app.use(cors(corsOptions));
 app.use('/login', authRouter);
 app.use('/lessons', lessonRouter);
 app.use('/users', userRouter);
